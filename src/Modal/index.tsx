@@ -5,10 +5,10 @@ import styled from "styled-components";
  * Props for the Modal component.
  */
 interface ModalProps {
-    /**
-     * Modal message
-     */
-    message?: string
+  /**
+   * Modal message
+   */
+  message?: string
 }
 
 /**
@@ -49,13 +49,13 @@ const ModalContainer = styled.div`
 `
 
 const Modal: React.FC<ModalProps> = ({ message }) => {
-    return (
-        <ModalMask>
-            <ModalContainer>
-                {message || "Apologies but we could not load new cats for you at this time! Miau!"}
-            </ModalContainer>
-        </ModalMask>
-    );
+  return (
+    <ModalMask>
+      <ModalContainer>
+        {message || "Apologies but we could not load new cats for you at this time! Miau!"}
+      </ModalContainer>
+    </ModalMask>
+  );
 };
 
 export default Modal;

@@ -8,11 +8,11 @@ import { useLocation } from 'react-router-dom';
  * Represents the result of the useBreedDetails hook.
  */
 interface useBreedDetailsResult {
-    data: CatImage | null;
-    loading: boolean;
-    error: Object | null;
-  } 
-  
+  data: CatImage | null;
+  loading: boolean;
+  error: Object | null;
+}
+
 /**
  * Custom hook to fetch and manage details for a specific cat breed.
  * @returns {useBreedDetailsResult} The result of the useBreedDetails hook.
@@ -43,14 +43,14 @@ const useBreedDetails = (): useBreedDetailsResult => {
       }
     };
 
-    if(!breedFromContext) {
-        setLoading(false)
-        fetchData();
+    if (!breedFromContext) {
+      setLoading(false)
+      fetchData();
     } else {
-        setData(breedFromContext)
+      setData(breedFromContext)
     }
   }, [breedFromContext]);
-  
+
   return { data, loading, error };
 };
 

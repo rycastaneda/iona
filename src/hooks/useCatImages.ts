@@ -44,7 +44,6 @@ const useCatImages = (breed: string): UseCatImagesResult => {
   const [error, setError] = useState<Object | null>(null);
   const [page, setPage] = useState<number>(1);
   const [isAtEnd, setIsAtEnd] = useState<boolean>(false);
-  console.log('data', data);
   const baseUrl = `https://api.thecatapi.com/v1/images/search?limit=10`;
 
   useEffect(() => {

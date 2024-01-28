@@ -40,7 +40,7 @@ const Cat = (): JSX.Element => {
   }
 
   return (
-    <div className="container">
+    <div className="container breed-page">
       <Card>
         <Spacer>
           <Button
