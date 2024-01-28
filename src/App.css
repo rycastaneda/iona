@@ -41,6 +41,10 @@ h1,h2,h3 {
   margin-bottom: 0.5rem;
 }
 
+.text-left {
+  text-align: left !important;
+}
+
 .breed-page {
   margin-top: 2rem;
   margin-bottom: 2rem;
