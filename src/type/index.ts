@@ -44,3 +44,4 @@ export interface CatBreed {
     width: number;
     height: number;
     breeds?: CatBreed[];
+  }
