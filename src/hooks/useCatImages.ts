@@ -1,5 +1,5 @@
-import { CatBreed } from './../types/index';
 import { useState, useEffect } from 'react';
+import { CatImage } from '../type';
 
 /**
  * Represents the result of the useCatImages hook.
@@ -8,7 +8,7 @@ interface UseCatImagesResult {
   /**
    * Array of cat breeds or null if data is not yet loaded.
    */
-  data: CatBreed[] | null;
+  data: CatImage[] | null;
 
   /**
    * Indicates whether the data is currently being loaded.
@@ -38,13 +38,13 @@ interface UseCatImagesResult {
  * @returns {UseCatImagesResult} An object containing cat images data, loading state, error information, and a function to load more data.
  */
 const useCatImages = (breed: string): UseCatImagesResult => {
-  const [data, setData] = useState<CatBreed[] | null>(null);
+  const [data, setData] = useState<CatImage[] | null>(null);
   const [currentBreed, setCurrentBreed] = useState<string>(breed);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<Object | null>(null);
   const [page, setPage] = useState<number>(1);
   const [isAtEnd, setIsAtEnd] = useState<boolean>(false);
-
+  console.log('data', data);
   const baseUrl = `https://api.thecatapi.com/v1/images/search?limit=10`;
 
   useEffect(() => {
@@ -67,7 +67,7 @@ const useCatImages = (breed: string): UseCatImagesResult => {
           throw new Error(`Failed to fetch data from ${`${baseUrl}&breed_id=${currentBreed}&page=${page}`}`);
         }
 
-        const result: CatBreed[] = await response.json();
+        const result: CatImage[] = await response.json();
 
         if (data) {
           let atEnd = true;

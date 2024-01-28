@@ -1,10 +1,9 @@
 import React from 'react';
 import LinkButton from '../Button/LinkButton';
 import styled from 'styled-components';
+import { CatImage } from '../type';
 
-interface CatCardProps {
-  id: string;
-  url: string;
+interface CatCardProps extends CatImage {
   onCardClick: () => void;
 }
 
@@ -48,7 +47,7 @@ export const CardDescription = styled.div`
  * @param {CatCardProps} props - The properties of the CatCard component.
  * @returns {JSX.Element} The CatCard JSX element.
  */
-const CatCard: React.FC<CatCardProps> = ({ url, id, onCardClick }: CatCardProps): JSX.Element => {
+const CatCard: React.FC<CatCardProps> = ({ id, url, onCardClick }: CatCardProps): JSX.Element => {
   /**
    * Handles the click event on the card.
    * @param {MouseEvent} event - The mouse click event.

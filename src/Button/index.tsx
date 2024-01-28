@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 interface ButtonProps {
-  $primary?: number;
-  $secondary?: number;
+  $primary?: boolean;
+  $secondary?: boolean;
 }
 
 const Button = styled.button<ButtonProps>`
